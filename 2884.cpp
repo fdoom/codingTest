@@ -12,7 +12,7 @@ int main(void)
 		m = 60 - (45 - m);
 		
 		if ((h - 1) < 0)
-			h = 24 - 1;
+			h = 23;
 		else
 			h--;
 	}
