@@ -3,17 +3,17 @@
 
 using namespace std;
 
-typedef struct {
+typedef struct _Position {
 	int x;
 	int y;
 }Position;
 
 bool cmp(const Position& p1, const Position& p2)
 {
-	if (p1.x == p2.x)			//좌표 x가 같다면
-		return p1.y < p2.y;		//좌표 y를 기준으로 올림차순
-	else
+	if (p1.y == p2.y)			//좌표 y가 같다면
 		return p1.x < p2.x;		//좌표 x를 기준으로 올림차순
+	else
+		return p1.y < p2.y;		//좌표 y를 기준으로 올림차순
 }
 
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
 
 	int n;
 	cin >> n;
-	Position* arr = new Position[n];
+	Position*  arr = new Position[n];
 
 	for (int i = 0; i < n; i++)
 		cin >> arr[i].x >> arr[i].y;
