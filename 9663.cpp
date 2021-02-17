@@ -48,5 +48,5 @@ int main(void)
 	cin >> n;
 	solution(0);
 	cout << result;
-    return 0;
+	return 0;
 }
