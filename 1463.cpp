@@ -6,7 +6,6 @@ int dp[1000001] = { 0, };
 int main(void)
 {
 	int n;
-	
 	cin >> n;
 
 	for (int i = 2; i <= n; i++)
