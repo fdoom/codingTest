@@ -12,7 +12,7 @@ int solution(int deep)
 	if (arr[deep])
 		return arr[deep];
 	else
-		return arr[deep] = (solution(deep - 1) + solution(deep - 2)) % 10007;
+		return arr[deep] = (solution(deep - 1) + (solution(deep - 2) * 2)) % 10007;
 }
 
 int main(void)
