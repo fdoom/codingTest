@@ -10,7 +10,7 @@ int main(void)
 
 	while (t--)
 	{
-		int n1, n2, low = 1;
+		int n1, n2, low = 1;	//low = 최대공약수
 		cin >> n1 >> n2;
 
 		for (int i = 2; i <= min(n1, n2); i++)
