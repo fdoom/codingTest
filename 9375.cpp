@@ -29,7 +29,7 @@ int main(void) {
 					q[i]++;
 
 		int sum = 1;
-		for (int i = 0; i < r.size(); i++)	// (의상 종류당 갯수 + 해당 종류의 옷)
+		for (int i = 0; i < r.size(); i++)	// (의상 종류당 갯수 + 해당 옷)
 			sum *= (q[i] + 1);
 
 		cout << sum - 1 << endl;			//알몸인 상태 제거
