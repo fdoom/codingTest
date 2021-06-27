@@ -8,7 +8,7 @@ int main(void)
 	int N;
 	cin >> N;
 
-	long long * A = new long long [N];
+	int * A = new int [N];
 
 	for (int i = 0; i < N; i++)
 		cin >> A[i];
