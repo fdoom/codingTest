@@ -8,5 +8,6 @@ class Main{
         
         int input = sc.nextInt();
         System.out.println(input - diff);
+        sc.close();
     }
 }
