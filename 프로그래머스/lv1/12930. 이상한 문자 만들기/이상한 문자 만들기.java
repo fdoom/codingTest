@@ -2,10 +2,8 @@ class Solution {
     public String solution(String s) {
         String answer = "";
         for(String str : s.split(" ")) {
-            String temp = "";
             for(int i = 0; i < str.length(); i++)
-                temp += i % 2 == 0 ? str.toUpperCase().charAt(i) : str.toLowerCase().charAt(i);
-            answer += temp;
+                answer += i % 2 == 0 ? str.toUpperCase().charAt(i) : str.toLowerCase().charAt(i);
             if(answer.length() < s.length())
                 answer += " ";
         }
