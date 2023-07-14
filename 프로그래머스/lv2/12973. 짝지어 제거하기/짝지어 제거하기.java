@@ -6,11 +6,11 @@ class Solution
         Stack <String> c = new Stack<>();
         for(String str : s.split("")) {
             if(c.isEmpty())
-                c.add(str);
-            else if(c.lastElement().equals(str))
-                c.remove(c.size() - 1);
+                c.push(str);
+            else if(c.peek().equals(str))
+                c.pop();
             else
-                c.add(str);
+                c.push(str);
         }
         int answer = c.isEmpty() ? 1 : 0;
         return answer;
