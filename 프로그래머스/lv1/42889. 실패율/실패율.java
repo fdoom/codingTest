@@ -10,13 +10,12 @@ class Solution {
             int cnt = 0;
             for(int j = 0; j < stages.length; j++) {
                 if((i + 1) == stages[j]) {
-                    fail[i][0]++;
                     cnt++;
                 }
             }
             
             if(temp > 0)
-               fail[i][0] /= (double) temp;
+               fail[i][0] = (double)cnt / temp;
             else
                 fail[i][0] = 0;
             temp -= cnt;
