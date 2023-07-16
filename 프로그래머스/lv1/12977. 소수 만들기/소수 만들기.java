@@ -13,6 +13,7 @@ class Solution {
                 for(int j = 0; j < arr.size(); j++) {
                     if(i % arr.get(j) == 0) {
                         flag = false;
+                        break;
                     }
                 }
                 if(flag) arr.add(i);
