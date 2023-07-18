@@ -7,7 +7,7 @@ class Solution {
                 if(i % j == 0) {
                     cnt++;
                     if(i / j != j)
-                        cnt ++;
+                        cnt++;
                 }
             }
             answer += cnt <= limit ? cnt : power;
