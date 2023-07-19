@@ -15,8 +15,8 @@ class Solution {
                 }
             }
         }
-        answer[0] = 7 - zero - same >= 6 ? 6 : 7 - zero - same;
-        answer[1] = 7 - same >= 6 ? 6 : 7 - same;
+        answer[0] = Math.min(7 - zero - same, 6);
+        answer[1] = Math.min(7 - same, 6);
         return answer;
     }
 }
