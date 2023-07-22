@@ -3,15 +3,13 @@ class Solution {
         StringBuilder answer = new StringBuilder();
         for(char c : s.toCharArray()) {
             int cnt = 0;
-            char temp = c;
             for(int i = 0; i < index + cnt; i++) {
-                temp++;
-                if(temp > 'z')
-                    temp = 'a';
-                if(skip.matches("(.*)" + temp + "(.*)"))
+                if(++c > 'z')
+                    c = 'a';
+                if(skip.contains(String.valueOf(c)))
                     cnt++;
             }
-            answer.append(temp);
+            answer.append(c);
         }
         return answer.toString();
     }
