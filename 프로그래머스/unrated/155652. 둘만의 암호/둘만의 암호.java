@@ -8,10 +8,8 @@ class Solution {
                 temp++;
                 if(temp > 'z')
                     temp = 'a';
-                if(skip.matches("(.*)" + temp + "(.*)")) {
+                if(skip.matches("(.*)" + temp + "(.*)"))
                     cnt++;
-                    continue;
-                }
             }
             answer.append(temp);
         }
