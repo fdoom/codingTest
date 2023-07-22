@@ -18,15 +18,13 @@ class Solution {
             
             if(basket.isEmpty())
                 basket.push(BOARD.get(m - 1).remove(0));
-            else {
-                if(basket.peek() == BOARD.get(m - 1).get(0)) {
-                    basket.pop();
-                    BOARD.get(m - 1).remove(0);
-                    answer += 2;
-                }
-                else
-                    basket.push(BOARD.get(m - 1).remove(0));
+            else if(basket.peek() == BOARD.get(m - 1).get(0)) {
+                basket.pop();
+                BOARD.get(m - 1).remove(0);
+                answer += 2;
             }
+            else
+                basket.push(BOARD.get(m - 1).remove(0));
         }
         return answer;
     }
