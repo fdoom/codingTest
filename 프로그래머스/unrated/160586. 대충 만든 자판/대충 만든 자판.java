@@ -18,7 +18,6 @@ class Solution {
                 }
                 else answer[i] += press + 1;
             }
-            if(answer[i] == 0) answer[i] = -1;
         }
         return answer;
     }
