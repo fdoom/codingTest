@@ -7,12 +7,10 @@ class Solution {
         int len = 0;
         for(int i : ingredient) {
             sb.append(i); len++;
-            if(i == 1 && len >= 4) {
-                if(sb.substring(len - 4).equals("1231")) {
-                    sb.delete(len - 4, len);
-                    len -= 4;
-                    answer++;
-                }
+            if(i == 1 && len >= 4 && sb.substring(len - 4).equals("1231")) {
+                sb.delete(len - 4, len);
+                len -= 4;
+                answer++;
             }
         }
         return answer;
