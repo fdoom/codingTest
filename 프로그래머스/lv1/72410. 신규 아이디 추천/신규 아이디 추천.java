@@ -1,7 +1,6 @@
 class Solution {
     public String solution(String new_id) {
         String answer = new_id.toLowerCase().replaceAll("[^a-z|0-9|\\-|_|.]", "").replaceAll("[.]+", ".").replaceAll("^[.]|[.]$", "");
-		System.out.println(answer);
 		if(answer.isBlank())
 			answer = "aaa";
 		if(answer.length() >= 16) {
