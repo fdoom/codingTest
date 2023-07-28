@@ -35,8 +35,7 @@ class Solution {
                     break;
                 }
             }
-            position[0] = temp[0];
-            position[1] = temp[1];
+            position = temp.clone();
         }
         return position;
     }
