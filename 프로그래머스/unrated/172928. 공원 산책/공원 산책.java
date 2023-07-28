@@ -31,8 +31,7 @@ class Solution {
                 temp[0] += move[direction][0];
                 temp[1] += move[direction][1];
                 if(temp[0] < 0 || temp[1] < 0 || temp[0] >= park.length || temp[1] >= park[0].length() || park[temp[0]].charAt(temp[1]) == 'X') {
-                    temp[0] = position[0];
-                    temp[1] = position[1];
+                    temp = position.clone();
                     break;
                 }
             }
