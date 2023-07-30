@@ -2,7 +2,6 @@ import java.util.*;
 class Solution {
     public int solution(int[] people, int limit) {
         int answer = 0;
-        boolean[] out = new boolean[people.length];
         Arrays.sort(people);
         
         int left = 0;
