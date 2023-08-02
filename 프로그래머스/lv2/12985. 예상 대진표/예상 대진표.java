@@ -32,7 +32,6 @@ class Solution
         }
         
         subdivision(Math.min(a, b), Math.max(a,b), 0, n - 1, cnt);
-        System.out.println(answer);
         return answer;
     }
 }
