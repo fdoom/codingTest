@@ -19,7 +19,7 @@ class Solution {
             subdivision(a, b, mid + 1, right, cnt - 1);
     }
     
-    public int solution(int n, int a, int b) {
+    public static int solution(int n, int a, int b) {
         int cnt = 0;
         for(int i = 1; i <= n; i++) {
             if((int)Math.pow(2, i) == n) {
