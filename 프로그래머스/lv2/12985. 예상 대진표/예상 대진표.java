@@ -2,7 +2,7 @@ import java.util.*;
 class Solution
 {
     static int answer = 0;
-    private void subdivision(int a, int b, int left, int right, int cnt) {
+    private static void subdivision(int a, int b, int left, int right, int cnt) {
         if(left == right) return;
         int mid = (left + right) / 2;
         
