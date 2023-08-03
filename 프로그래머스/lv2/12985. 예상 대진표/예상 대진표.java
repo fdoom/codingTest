@@ -1,16 +1,13 @@
 import java.util.*;
-class Solution
-{
+class Solution {
     static int answer = 0;
     private static void subdivision(int a, int b, int left, int right, int cnt) {
         if(left == right) return;
         int mid = (left + right) / 2;
         
         boolean[] check = new boolean[2];
-        if(left <= a && mid >= a)
-            check[0] = true;
-        if(mid + 1 <= b && right >= b)
-            check[1] = true;
+        if(left <= a && mid >= a) check[0] = true;
+        if(mid + 1 <= b && right >= b) check[1] = true;
         
         if(check[0] && check[1]) {
             answer = cnt;
