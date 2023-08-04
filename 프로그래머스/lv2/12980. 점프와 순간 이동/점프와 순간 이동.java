@@ -1,9 +1,8 @@
 public class Solution {
-    public static int solution(int n) {
-        String s = Integer.toBinaryString(n);
+    public int solution(int n) {
         int ans = 0;
-        for(int i = 0; i < s.length(); i++)
-            if(s.charAt(i) == '1')
+        for(char c : Integer.toBinaryString(n).toCharArray())
+            if(c == '1')
                 ans++;
         return ans;
     }
