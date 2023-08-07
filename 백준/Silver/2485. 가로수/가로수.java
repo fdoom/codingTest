@@ -4,8 +4,6 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		int[] arr = new int[N];
-		int maxValue = Integer.MIN_VALUE;
-		int minValue = Integer.MAX_VALUE;
 		for(int i = 0; i < N; i++)
 			arr[i] = sc.nextInt();
 		Arrays.sort(arr);
@@ -15,9 +13,8 @@ public class Main {
 			int temp = arr[i] - arr[i - 1];
 			GCD = gcd(temp, GCD);
 		}
-		int answer = 0;
-		for(int i = arr[0]; i <= arr[N - 1]; i += GCD) answer++;
-		System.out.println(answer - N);
+		
+		System.out.println((arr[N - 1] - arr[0]) / GCD + 1 - N);
 	}
 	
 	private static int gcd(int a, int b) {
