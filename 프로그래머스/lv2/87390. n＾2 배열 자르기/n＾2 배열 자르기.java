@@ -1,7 +1,7 @@
 import java.util.*;
 class Solution {
     public List<Long> solution(int n, long left, long right) {
-		List <Long> list = new ArrayList<>();
+        List <Long> list = new ArrayList<>();
         long cnt = left / n * n;
         for(long i = left / n; i < n; i++) {
             if(cnt > right + 1) break;
