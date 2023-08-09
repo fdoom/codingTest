@@ -7,7 +7,7 @@ class Solution {
             if(cnt > right) break;
             for(long j = 0; j < n; j++) {
                 if(cnt > right) break;
-                if(cnt >= left && cnt <= right)
+                if(cnt >= left)
                     list.add(Math.max(i, j) + 1);
                 cnt++;
             }
