@@ -15,10 +15,9 @@ public class Main {
 			sb.append(arr[0]).append(' ');
 			int move = arr[1];
 			
-			if(move > 0) {
+			if(move > 0)
 				for(int i = 1; i < move; i++)
 					d.add(d.remove());
-			}
 			else
 				for(int i = move; i < 0; i++)
 					d.addFirst(d.removeLast());
