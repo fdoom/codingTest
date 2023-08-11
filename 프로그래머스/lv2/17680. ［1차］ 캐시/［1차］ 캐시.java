@@ -2,20 +2,20 @@ import java.util.*;
 class Solution {
     public int solution(int cacheSize, String[] cities) {
         int answer = 0;
-        Queue <String> city = new LinkedList<>();
+        Queue <String> cache = new LinkedList<>();
         for(String s : cities) {
             s = s.toLowerCase();
-            if(city.contains(s)) {
+            if(cache.contains(s)) {
                 answer++;
-                city.remove(s);
-                city.offer(s);
+                cache.remove(s);
+                cache.offer(s);
             }
             else {
                 answer += 5;
-                if(city.size() == cacheSize)
-                    city.poll();
-                if(city.size() < cacheSize)
-                    city.offer(s);
+                if(cache.size() == cacheSize)
+                    cache.poll();
+                if(cache.size() < cacheSize)
+                    cache.offer(s);
             }
         }
         return answer;
