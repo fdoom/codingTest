@@ -6,16 +6,13 @@ public class Main {
 		int N = Integer.parseInt(br.readLine());
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		List <Integer> list = new ArrayList<>();
+		StringTokenizer st2 = new StringTokenizer(br.readLine());
 		Deque <Integer> d = new ArrayDeque<>();
-		for(int i = 0; i < N; i++)
-			list.add(Integer.parseInt(st.nextToken()));
-		
-		st = new StringTokenizer(br.readLine());
-		for(int i = 0; i < N; i++) {
-			int n = Integer.parseInt(st.nextToken());
-			if(list.get(i) == 0)
+		while(N-- > 0) {
+			int n = Integer.parseInt(st2.nextToken());
+			if(Integer.parseInt(st.nextToken()) == 0) {
 				d.add(n);
+			}
 		}
 		
 		N = Integer.parseInt(br.readLine());
