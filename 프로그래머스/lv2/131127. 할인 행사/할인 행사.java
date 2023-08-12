@@ -5,6 +5,7 @@ class Solution {
         Map <String, Integer> map = new HashMap<>();
             for(String w : want)
                 map.put(w, 0);
+        
         for(int i = 0; i <= discount.length - 10; i++) {
             Map <String, Integer> temp = new HashMap<>();
             temp.putAll(map);
@@ -16,7 +17,6 @@ class Solution {
                 }
                 temp.put(discount[j], temp.get(discount[j]) + 1);
             }
-
             if(!flag) continue;
 
             for(int j = 0; j < want.length; j++) {
@@ -25,9 +25,7 @@ class Solution {
                     break;
                 }
             }
-            if(!flag) continue;
-
-            answer++;
+            if(flag) answer++;
         }
         return answer;
     }
