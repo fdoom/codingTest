@@ -20,7 +20,7 @@ class Solution {
             if(!flag) continue;
 
             for(int j = 0; j < want.length; j++) {
-                if(temp.get(want[j]) != number[j]) {
+                if(temp.get(want[j]) < number[j]) {
                     flag = false;
                     break;
                 }
