@@ -9,13 +9,8 @@ class Solution {
             else
                 cnt.put(clothes[i][1], cnt.get(clothes[i][1]) + 1);
         }
-        if(cnt.size() > 1) {
-            for(String key : cnt.keySet())
-                answer *= cnt.get(key) + 1;
-            answer--;
-        }
-        else answer = clothes.length;
-        
-        return answer;
+        for(String key : cnt.keySet())
+            answer *= cnt.get(key) + 1;
+        return answer - 1;
     }
 }
