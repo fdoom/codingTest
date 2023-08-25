@@ -1,25 +1,22 @@
 import java.util.*;
 class Solution {
     static boolean[] check;
-    static int cnt = 0;
     public int solution(int n, int[][] computers) {
-        int answer = n;
+        int answer = 0;
         check = new boolean[n];
         for(int i = 0; i < n; i++) {
             if(check[i]) continue;
-            cnt = 0;
             DFS(n, computers, i);
-            answer -= cnt + 1;
+            answer++;
         }
-        return answer *  -1;
+        return answer;
     }
     
-    void DFS(int n, int[][] computers, int deep) {
-        if(deep >= n) return;
+    void DFS(int n, int[][] computers, int index) {
+        if(index >= n) return;
         for(int i = 0; i < n; i++) {
-            if(!check[i] && computers[deep][i] == 1) {
+            if(!check[i] && computers[index][i] == 1) {
                 check[i] = true;
-                cnt++;
                 DFS(n, computers, i);
             }
         }
