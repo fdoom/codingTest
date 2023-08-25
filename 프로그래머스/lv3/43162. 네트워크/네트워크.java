@@ -15,7 +15,6 @@ class Solution {
         check[index] = true;
         for(int i = 0; i < n; i++) {
             if(!check[i] && computers[index][i] == 1) {
-                check[i] = true;
                 DFS(n, computers, check, i);
             }
         }
