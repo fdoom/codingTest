@@ -19,10 +19,6 @@ class Solution {
                 Set <Long> set = new HashSet<>();
                 for(long i = 2; i * i <= num; i++) {
                     if(set.contains(i)) continue;
-                    if(num % i == 0) {
-                        check = true;
-                        break;
-                    }
                     for(long j = i; j <= num; j *= i) {
                         set.add(j);
                         if(num % j == 0) {
