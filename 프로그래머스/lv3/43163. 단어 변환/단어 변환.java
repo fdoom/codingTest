@@ -8,7 +8,6 @@ class Solution {
         return answer == Integer.MAX_VALUE ? 0 : answer;
     }
     
-    
     public static void dfs(String begin, String target, String[] words, int cnt) {
         if (begin.equals(target)) {
             answer = Math.min(answer, cnt);
