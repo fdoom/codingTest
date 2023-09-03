@@ -9,11 +9,11 @@ class Solution {
     }
     
     public static void dfs(String word, char[] vowel, StringBuilder sb) {
-        if(sb.toString().length() >= 5 || answer > 0)
+        if(sb.toString().length() >= 5)
             return;
         for(int i = 0; i < vowel.length && answer == 0; i++) {
             sb.append(vowel[i]);
-            if(answer == 0 && word.equals(sb.toString())) {
+            if(word.equals(sb.toString())) {
                 answer = cnt;
                 break;  
             }
