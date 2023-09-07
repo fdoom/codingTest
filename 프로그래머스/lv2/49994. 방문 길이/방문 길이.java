@@ -25,7 +25,7 @@ class Solution {
 			int[] before = p.clone();
 			p[0] += m[0];
 			p[1] += m[1];
-			if(!v[p[0]][p[1]][before[0]][before[1]] && !v[before[0]][before[1]][p[0]][p[1]]) {
+			if(!v[p[0]][p[1]][before[0]][before[1]]) {
 				v[p[0]][p[1]][before[0]][before[1]] = true;
 				v[before[0]][before[1]][p[0]][p[1]] = true;
 				answer++;
