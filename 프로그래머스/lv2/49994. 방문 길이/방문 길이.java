@@ -22,13 +22,12 @@ class Solution {
     
 	private static void moving(int[]p, int[] m, boolean[][][][] v) {
 		if((p[0] + m[0]) <= 10 && (p[0] + m[0]) >= 0 && (p[1] + m[1]) <= 10 && (p[1] + m[1]) >= 0) {
-			int[] temp1 = p.clone();
+			int[] before = p.clone();
 			p[0] += m[0];
 			p[1] += m[1];
-			int[] temp2 = p.clone();
-			if(!v[temp2[0]][temp2[1]][temp1[0]][temp1[1]] && !v[temp1[0]][temp1[1]][temp2[0]][temp2[1]]) {
-				v[temp2[0]][temp2[1]][temp1[0]][temp1[1]] = true;
-				v[temp1[0]][temp1[1]][temp2[0]][temp2[1]] = true;
+			if(!v[p[0]][p[1]][before[0]][before[1]] && !v[before[0]][before[1]][p[0]][p[1]]) {
+				v[p[0]][p[1]][before[0]][before[1]] = true;
+				v[before[0]][before[1]][p[0]][p[1]] = true;
 				answer++;
 			}
 		}
