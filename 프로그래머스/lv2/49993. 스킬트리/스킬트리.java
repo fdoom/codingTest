@@ -10,9 +10,9 @@ class Solution {
             Stack <Integer> stack = new Stack<>();
             for(int i = 0; i < skill.length(); i++) {
             	if(map.containsKey(skill.charAt(i)))
-            		stack.add(map.get(skill.charAt(i)));
+            		stack.push(map.get(skill.charAt(i)));
             	else
-            		stack.add(0);
+            		stack.push(0);
             }
             while(!stack.isEmpty() && stack.peek() == 0)
             	stack.pop();
