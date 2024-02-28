@@ -1,14 +1,12 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
     static int[][] board;
-    static boolean[][] visited;
     static int[][] move = {
             {0, 1},
             {-1, 0},
@@ -23,7 +21,6 @@ public class Main {
         int M = Integer.parseInt(st.nextToken());
 
         board = new int[N][M];
-        visited = new boolean[N][M];
         for(int i = 0; i < N; i++) {
             int j = 0;
             for(char c : br.readLine().toCharArray()) {
@@ -38,7 +35,6 @@ public class Main {
     static void BFS(int x, int y) {
         Queue<int[]> q = new LinkedList<>();
         q.offer(new int[]{x, y});
-        visited[x][y] = true;
 
         while(!q.isEmpty()) {
             int[] node = q.poll();
@@ -47,9 +43,8 @@ public class Main {
                 int tempX = node[0] + move[i][0];
                 int tempY = node[1] + move[i][1];
 
-                if(tempX >= 0 && tempX < board.length && tempY >= 0 && tempY < board[0].length && board[tempX][tempY] == 1 && !visited[tempX][tempY]) {
+                if(tempX >= 0 && tempX < board.length && tempY >= 0 && tempY < board[0].length && board[tempX][tempY] == 1) {
                     q.offer(new int[]{tempX, tempY});
-                    visited[tempX][tempY] = true;
                     board[tempX][tempY] = board[node[0]][node[1]] + 1;
                 }
             }
