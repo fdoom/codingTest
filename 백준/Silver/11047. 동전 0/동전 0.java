@@ -16,11 +16,10 @@ public class Main {
 
         int answer = 0;
         for(int i = N - 1; i >= 0; i--) {
-            int cnt = 0;
-            for(int j = 1; arr[i] * j <= K; j++)
-                cnt++;
-            K -= arr[i] * cnt;
-            answer += cnt;
+            if(arr[i] <= K) {
+                answer += K / arr[i];
+                K %= arr[i];
+            }
         }
         System.out.println(answer);
     }
