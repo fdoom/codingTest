@@ -17,10 +17,6 @@ class Solution {
                 map.put(c, map.get(c) - 1);
         }
         
-        String answer = "";
-        for(String key : map.keySet()) {
-            answer = key;
-        }
-        return answer;
+        return map.keySet().iterator().next();
     }
 }
