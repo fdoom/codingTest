@@ -31,6 +31,6 @@ class Solution {
                 answer.add(count);
         }
         
-        return answer.stream().mapToInt(Integer::intValue).toArray();
+        return answer.stream().mapToInt(i -> i).toArray();
     }
 }
