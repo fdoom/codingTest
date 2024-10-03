@@ -5,13 +5,13 @@ class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         Queue <Integer> progressesQueue = Arrays.stream(progresses)
             .boxed()
-            .collect(Collectors.toCollection(LinkedList::new));
+            .collect(Collectors.toCollection(ArrayDeque::new));
         
         Queue <Integer> speedsQueue = Arrays.stream(speeds)
             .boxed()
-            .collect(Collectors.toCollection(LinkedList::new));
+            .collect(Collectors.toCollection(ArrayDeque::new));
         
-        Queue<Integer> answer = new LinkedList<>();
+        Queue<Integer> answer = new ArrayDeque<>();
         
         while (!progressesQueue.isEmpty()) {
             for (int i = 0; i < progressesQueue.size(); i++) {
