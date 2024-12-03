@@ -18,6 +18,6 @@ class Solution {
             }
         }
         
-        return answer; // 예외 상황 (문제 조건상 발생하지 않음)
+        return answer;
     }
 }
