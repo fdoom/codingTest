@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Solution {
-    static boolean[] check;
-    static int answer = -1;
+    boolean[] check;
+    int answer = -1;
     
     public int solution(int k, int[][] dungeons) {
         check = new boolean[dungeons.length];
