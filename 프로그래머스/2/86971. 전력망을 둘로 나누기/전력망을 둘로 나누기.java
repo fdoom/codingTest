@@ -24,7 +24,7 @@ class Solution {
             int cnt = bfs(g, n, wire[0]);        // wire[0] 기준 그래프 연결 노드 탐색
 
             // 최소 차이 갱신
-            answer = Math.min(answer, Math.abs(n - cnt * 2));   // 전체 - cnt - cnt = 반대편 송진탑 - wire[0] 기준 송진탑
+            answer = Math.min(answer, Math.abs(n - cnt * 2));   // (전체 - cnt) - (cnt) = (반대편 송진탑) - (wire[0] 기준 송진탑)
 
             // 전선 복구
             g.get(wire[0]).add(wire[1]);
