@@ -2,24 +2,25 @@ import java.util.*;
 import java.util.stream.*;
 
 class Solution {
-    private static boolean[] visited;
-    private static List<String> result;
+    boolean[] visited;
+    List<String> result;
     
-    public static String[] solution(String[][] tickets) {
+    public String[] solution(String[][] tickets) {
         visited = new boolean[tickets.length];
         result = new ArrayList<>();
 
-        // 티켓 배열을 알파벳 순으로 정렬
-        Arrays.sort(tickets, (a, b) -> a[1].compareTo(b[1]));
-
         // DFS 탐색 시작
         dfs("ICN", "ICN", tickets, 0);
-
+        
+        // 모든 항공권을 소진한 경우 알파벳 순서로 정렬
+        Collections.sort(result);
+        
         // 경로 반환
         return result.get(0).split(" ");
     }
 
-    private static void dfs(String current, String path, String[][] tickets, int count) {
+    void dfs(String current, String path, String[][] tickets, int count) {
+        // 모든 항공권을 소진한 경우
         if (count == tickets.length) {
             result.add(path);
             return;
