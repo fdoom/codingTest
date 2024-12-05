@@ -37,9 +37,8 @@ class Solution {
             Node cur = q.remove();
 
             if (cur.x == maps.length - 1 && cur.y == maps[0].length - 1) {
-                if (answer == -1) answer = cur.cnt;
-                answer = Math.min(answer, cur.cnt);
-                return;
+                answer = cur.cnt;
+                break;
             }
 
             for (int[] m : move) {
