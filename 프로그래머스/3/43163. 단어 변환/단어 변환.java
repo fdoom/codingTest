@@ -2,8 +2,7 @@ class Solution {
     int answer = Integer.MAX_VALUE;
     
     public int solution(String begin, String target, String[] words) {
-        boolean[] visited = new boolean[words.length];
-        dfs(begin, target, words, visited, 0);
+        dfs(begin, target, words, new boolean[words.length], 0);
         return answer == Integer.MAX_VALUE ? 0 : answer;
     }
     
