@@ -13,7 +13,13 @@ class Node {
 
 class Solution {
     // 위, 아래, 오른쪽, 왼쪽
-    int[][] move = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    int[][] move = {
+        {0, 1},
+        {0, -1},
+        {1, 0},
+        {-1, 0}
+    };
+    
     int answer = -1;
 
     public int solution(int[][] maps) {
@@ -39,6 +45,7 @@ class Solution {
             for (int[] m : move) {
                 int moveX = cur.x + m[0];
                 int moveY = cur.y + m[1];
+                
                 if (moveX >= 0 && moveX < maps.length &&
                         moveY >= 0 && moveY < maps[0].length &&
                         maps[moveX][moveY] == 1 && !v[moveX][moveY]) {
@@ -48,5 +55,4 @@ class Solution {
             }
         }
     }
-
 }
