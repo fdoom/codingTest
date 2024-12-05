@@ -2,8 +2,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-    int answer = Integer.MAX_VALUE;
-
     public int solution(String begin, String target, String[] words) {
         Queue<WordInfo> q = new LinkedList<>();
         boolean[] visited = new boolean[words.length];
@@ -14,8 +12,7 @@ class Solution {
             WordInfo current = q.poll();
 
             if (current.word.equals(target)) {
-                answer = Math.min(answer, current.depth);
-                return answer;
+                return current.depth;
             }
 
             for (int i = 0; i < words.length; i++) {
@@ -26,7 +23,7 @@ class Solution {
             }
         }
 
-        return answer == Integer.MAX_VALUE ? 0 : answer;
+        return 0;
     }
 
     boolean canTransform(String a, String b) {
