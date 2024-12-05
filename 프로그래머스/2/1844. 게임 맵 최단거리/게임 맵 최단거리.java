@@ -25,10 +25,10 @@ class Solution {
 
     void bfs(int[][] maps, int x, int y, boolean[][] v) {
         Queue<Node> q = new LinkedList<>();
-        q.offer(new Node(x, y, 1));
+        q.add(new Node(x, y, 1));
 
         while (!q.isEmpty()) {
-            Node cur = q.poll();
+            Node cur = q.remove();
 
             if (cur.x == maps.length - 1 && cur.y == maps[0].length - 1) {
                 if (answer == -1) answer = cur.cnt;
@@ -43,7 +43,7 @@ class Solution {
                         moveY >= 0 && moveY < maps[0].length &&
                         maps[moveX][moveY] == 1 && !v[moveX][moveY]) {
                     v[moveX][moveY] = true;
-                    q.offer(new Node(moveX, moveY, cur.cnt + 1));
+                    q.add(new Node(moveX, moveY, cur.cnt + 1));
                 }
             }
         }
