@@ -13,7 +13,7 @@ class Solution {
         }
         
         for(int i = 0; i < w.length; i++) {
-            if(canTransform(b, w[i]) == true && !v[i]) {
+            if(canTransform(b, w[i]) && !v[i]) {
                 v[i] = true;
                 dfs(w[i], t, w, v, cnt + 1);
                 v[i] = false;
