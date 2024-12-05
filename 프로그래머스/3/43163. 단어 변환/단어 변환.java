@@ -1,47 +1,33 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 class Solution {
+    int answer = Integer.MAX_VALUE;
+    
     public int solution(String begin, String target, String[] words) {
-        Queue<WordInfo> q = new LinkedList<>();
-        boolean[] visited = new boolean[words.length];
-
-        q.offer(new WordInfo(begin, 0));
-
-        while (!q.isEmpty()) {
-            WordInfo current = q.poll();
-
-            if (current.word.equals(target))
-                return current.depth;
-
-            for (int i = 0; i < words.length; i++) {
-                if (!visited[i] && canTransform(current.word, words[i])) {
-                    visited[i] = true;
-                    q.offer(new WordInfo(words[i], current.depth + 1));
-                }
+        dfs(begin, target, words, new boolean[words.length], 0);
+        return answer == Integer.MAX_VALUE ? 0 : answer;
+    }
+    
+    void dfs(String b, String t, String[] w, boolean[] v, int cnt) {
+        if(b.equals(t)) {
+            answer = Math.min(answer, cnt);
+            return;
+        }
+        
+        for(int i = 0; i < w.length; i++) {
+            if(canTransform(b, w[i]) && !v[i]) {
+                v[i] = true;
+                dfs(w[i], t, w, v, cnt + 1);
+                v[i] = false;
             }
         }
-
-        return 0;
     }
-
+    
     boolean canTransform(String a, String b) {
         int cnt = 0;
-        for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) != b.charAt(i)) {
+        for(int i = 0; i < a.length(); i++) {
+            if(a.charAt(i) != b.charAt(i)) {
                 cnt++;
             }
         }
         return cnt == 1;
-    }
-
-    class WordInfo {
-        String word;
-        int depth;
-
-        WordInfo(String word, int depth) {
-            this.word = word;
-            this.depth = depth;
-        }
     }
 }
