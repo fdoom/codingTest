@@ -11,9 +11,8 @@ class Solution {
         while (!q.isEmpty()) {
             WordInfo current = q.poll();
 
-            if (current.word.equals(target)) {
+            if (current.word.equals(target))
                 return current.depth;
-            }
 
             for (int i = 0; i < words.length; i++) {
                 if (!visited[i] && canTransform(current.word, words[i])) {
