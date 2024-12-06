@@ -3,11 +3,10 @@ import java.util.stream.*;
 
 class Solution {
     boolean[] visited;
-    List<String> result;
+    List<String> result = new ArrayList<>();
     
     public String[] solution(String[][] tickets) {
         visited = new boolean[tickets.length];
-        result = new ArrayList<>();
 
         // DFS 탐색 시작
         dfs("ICN", "ICN", tickets, 0);
